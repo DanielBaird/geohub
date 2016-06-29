@@ -1,9 +1,7 @@
 {
-  "name": "geohub",
+  "name": "geohub-by-sha",
   "description": "GeoJSON extractor for Github repos and gists.",
-  "version": "1.0.3",
-  "author": "Chris Helm",
-  "bugs": "https://github.com/koopjs/geohub/issues",
+  "version": "0.0.1",
   "dependencies": {
     "async": "^1.4.2",
     "debug": "^2.2.0",
@@ -14,7 +12,6 @@
     "tap-spec": "^4.1.0",
     "tape": "^4.2.0"
   },
-  "homepage": "https://github.com/koopjs/geohub",
   "keywords": [
     "geojson",
     "gist",
@@ -24,7 +21,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/koopjs/geohub.git"
+    "url": "git://github.com/DanielBaird/koop-geohub-by-sha.git"
   },
   "scripts": {
     "test": "standard && tape test/*-test.js | tap-spec"

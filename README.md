@@ -1,3 +1,18 @@
+
+# rickety copy of geohub
+
+This is a shallow, poorly thought out copy of geohub to do a
+proof-of-concept implementation of fetching a file from a github
+repo using a specific sha.
+
+The method used by original geohub is limited to files with a maximum
+size of 1 Mb.  A blob data API exists to fetch files up to 100Mb in
+size, and this modification is attempting to use that API.
+
+Blame daniel@danielbaird.com for all problems.
+
+Original geohub docs follow.
+
 # geohub
 
 > GeoJSON extractor for Github repos and gists.

@@ -3,6 +3,7 @@ var geohub = require('../')
 var user = 'chelm'
 var repo = 'grunt-geo'
 var path = 'forks'
+var sha = 'e3729d510e786be80126225579214a78cf06e7a1'
 var token = process.env.GITHUB_TOKEN
 
 test('When requesting geojson from a repo with geojson', function (t) {
@@ -53,6 +54,22 @@ test('When only passing in a user/repo', function (t) {
     t.ok(data[0].features.length > 0, 'object 1 has features')
     t.ok(data[1].features.length > 0, 'object 2 has features')
     t.ok(data[2].features.length > 0, 'object 3 has features')
+    t.end()
+  })
+})
+
+test('When passing in a user/repo plus file sha', function (t) {
+  geohub.repo({
+    user: user,
+    repo: repo,
+    sha: sha,
+    token: token
+  }, function (err, data) {
+    t.error(err, 'does not error')
+    t.ok(data, 'data exists')
+    t.equal(typeof data, 'object', 'data is an object')
+    t.equal(data.type, 'FeatureCollection', 'data object is FeatureCollection')
+    t.ok(data.features.length > 0, 'data object has features')
     t.end()
   })
 })
